@@ -5,24 +5,19 @@ import PackageDescription
 
 let package = Package(
     name: "VisionLib",
+    platforms: [
+        .iOS(.v11)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "VisionLib",
             targets: ["VisionLib"]),
     ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
+    dependencies: [],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
+        .binaryTarget(
             name: "VisionLib",
-            dependencies: []),
-        .testTarget(
-            name: "VisionLibTests",
-            dependencies: ["VisionLib"]),
+            url: "https://public.repo.sygic.com/repository/maven-sygic-releases/com/sygic/adas/vision/1.2.21/vision-1.2.21-lite.zip",
+            checksum: "a7b0d1b4ef8138121c938bad52a5f8febb8fd30350ce1aef41ed263b68a981b7")
     ]
 )
